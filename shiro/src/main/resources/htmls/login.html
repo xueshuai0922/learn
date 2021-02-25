@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+    <style>
+        .box {
+            width: 400px;
+            height: 400px;
+            margin: 20px auto;
+            background-color: skyblue;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <input class="name" type="text">登录名称
+    <input class="pwd" type="password">密码
+    <br>
+    <button>登录</button>
+</div>
+<script>
+
+    let buttonElement = document.querySelector('button');
+    let name = document.querySelector('name');
+    let pwd = document.querySelector('pwd');
+    console.log(name.innerText);
+    console.log(pwd.innerText);
+    buttonElement.onclick = function () {
+        console.log(name.innerText);
+        console.log(pwd.innerText);
+    }
+</script>
+</body>
+</html>

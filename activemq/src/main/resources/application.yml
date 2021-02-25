@@ -1,0 +1,17 @@
+spring:
+  activemq:
+    broker-url: tcp://127.0.0.1:61618
+    user: admin
+    password: admin
+    pool:
+      enabled: false
+  jms:
+    #    pub-sub-domain: true  #默认是false，false队列模式,true 订阅模式
+    listener:
+      acknowledge-mode: client
+    template:
+      delivery-mode: non_persistent
+    cache:
+      enabled: false
+server:
+  port: 8166
