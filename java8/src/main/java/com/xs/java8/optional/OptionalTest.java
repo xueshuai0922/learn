@@ -3,6 +3,7 @@ package com.xs.java8.optional;
 import com.xs.java8.lamdba.Employee;
 import org.junit.Test;
 
+import java.util.HashMap;
 import java.util.Optional;
 
 /**
@@ -30,10 +31,16 @@ public class OptionalTest {
         //Optional的get方法
         System.out.println(orElse.getAge());
 
+        HashMap<Object, Object> hashMap = new HashMap<>();
+//        hashMap.put("xx",123);
+        System.out.println(Optional.ofNullable(hashMap.get("xx")+"").orElse("xxxxxx"));
 
         //如果存在，则正常输出，如果不存在异常抛出
         Employee orElseThrow = employee.orElseThrow(ExceptionInInitializerError::new);//java.lang.ExceptionInInitializerError
         System.out.println(orElseThrow);
+
+
+
 
 
     }

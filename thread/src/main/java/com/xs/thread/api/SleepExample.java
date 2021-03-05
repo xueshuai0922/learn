@@ -24,5 +24,6 @@ public class SleepExample {
             Thread.sleep(1050);
             System.out.println(Thread.currentThread().getName()+"---------->"+i);
         }
+
     }
 }

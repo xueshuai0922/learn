@@ -10,7 +10,6 @@ import java.util.concurrent.ExecutorService;
  * @description
  */
 public class TheadTest {
-
     public static void main(String[] args) {
         //1.new thread
         Thread thread = new Thread();
