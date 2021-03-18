@@ -7,7 +7,7 @@ import java.util.concurrent.locks.LockSupport;
  * @date 2021/3/4 14:39
  * @description 线程顺序执行  实现线程A中执行线程B，线程B中执行线程C
  */
-public class t {
+public class ABCTest {
     static Thread cthread, bthread, athread;
 
     public static void main(String[] args) {
