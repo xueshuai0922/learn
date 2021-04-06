@@ -6,5 +6,11 @@ package com.xs.jvm;
  * @description
  */
 public class Car {
+    private  String  name;
+    private  String  band;
+
+    public void m(){
+        System.out.println("test");
+    }
 
 }

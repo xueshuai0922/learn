@@ -6,12 +6,12 @@ package com.xs.design.signleton;
  * @description 双保证懒汉单例
  */
 public class SafeSingleton {
-    private static SafeSingleton INSTANCE;
+    private static volatile SafeSingleton INSTANCE;
 
     private SafeSingleton() {
     }
 
-    ;
+
 
     public static SafeSingleton getInstance() {
         if (INSTANCE == null) {

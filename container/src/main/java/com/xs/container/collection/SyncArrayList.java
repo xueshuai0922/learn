@@ -41,7 +41,6 @@ public class SyncArrayList {
         }
         System.out.println(copyOnWriteArrayList.size());//10000
 
-        BlockingDeque<Object> objects = new BlockingDeque<>();
 
     }
 }
