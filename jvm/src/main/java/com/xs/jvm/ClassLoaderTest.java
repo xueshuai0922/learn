@@ -45,7 +45,11 @@ public class ClassLoaderTest {//类信息--》方法区
         String st = "abc";
         String ss = "abc";
         System.out.println(st == ss);
-
-
+//        System.getenv().forEach((k,v)->{
+//            System.out.println(k+":"+v);
+//        });
+//        System.getProperties().forEach((k,v)->{
+//            System.out.println(k+":"+v);
+//        });
     }
 }
