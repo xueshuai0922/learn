@@ -1,7 +1,10 @@
 package com.xs.mybatis.login.service;
 
+import com.xs.mybatis.common.CommonResult;
 import com.xs.mybatis.login.entity.User;
 import com.baomidou.mybatisplus.extension.service.IService;
+
+import java.util.List;
 
 /**
  * <p>
@@ -13,4 +16,13 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IUserService extends IService<User> {
 
+    CommonResult select();
+
+    CommonResult selectOne(String id);
+
+    CommonResult selectChoose(User user);
+
+     CommonResult selectByPage();
+
+     CommonResult deleteBatch(String  ids);
 }

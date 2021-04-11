@@ -1,5 +1,9 @@
 package com.xs.design.strategy;
 
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.Method;
+import java.lang.reflect.Proxy;
+
 /**
  * @author xueshuai
  * @date 2021/2/20 16:24
@@ -11,12 +15,23 @@ public class StrategyTest {
         Context context = new Context();
 
         //---------开始-------------  这块具体策略类，1.知道具体的策略方式 2.可以利用反射 动态代理
-        OneCalStrategy oneCalStrategy = new OneCalStrategy();
-        context.setStrategy(oneCalStrategy);
+        StrategyInterface strategyInterface = new OneCalStrategy();
+        context.setStrategy(strategyInterface);
         //--------结束-------------
 
         context.doCal(1);
+        getBeanInstance(OneCalStrategy.class);
 
+    }
+
+    private static void getBeanInstance(Class target) {
+        StrategyInterface o = (StrategyInterface)Proxy.newProxyInstance(Thread.currentThread().getContextClassLoader(), new Class[]{target}, new InvocationHandler() {
+            @Override
+            public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+                return null;
+            }
+        });
+        o.doCal(1);
     }
 
     //策略接口
@@ -68,6 +83,9 @@ public class StrategyTest {
         public void doCal(int i) {
             strategy.doCal(i);
         }
+
+    }
+    static class ProxyMain{
 
     }
 

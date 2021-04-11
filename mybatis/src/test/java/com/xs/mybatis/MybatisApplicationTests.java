@@ -22,9 +22,14 @@ import java.util.List;
 @RunWith(SpringRunner.class)
 public class MybatisApplicationTests {
 
-
+	//todo  怎么实现的代理，自己实现一遍
 	@Resource
 	private UserMapper userMapper;
+
+
+
+	//------------------------------------mybatis plus开始-----------------------
+
 	//查询全部返回list
 	@Test
 	public void selectAll(){
@@ -79,6 +84,6 @@ public class MybatisApplicationTests {
 		boolean flag = delete>0? true:false;
 		System.out.println("插入是否成功："+flag);
 	}
-
+	//------------------------------------mybatis plus结束-----------------------
 
 }

@@ -1,5 +1,7 @@
 package com.xs.design.proxy.statics;
 
+import java.lang.reflect.Proxy;
+
 /**
  * @author xueshuai
  * @date 2021/4/8 20:12
@@ -14,6 +16,9 @@ public class CalMutilateMain {
 
         CalInterface calInterface = new ProxyCal();//面向接口编程 多态
         calInterface.cal();
+
+
+//        Proxy.newProxyInstance(Thread.currentThread().getContextClassLoader(), )
     }
 
 
