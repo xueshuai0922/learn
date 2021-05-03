@@ -18,7 +18,8 @@ mybatis-plus:
 mybatis:
   type-aliases-package: com.xs.mybatis
   configuration:
-    object-factory: com.xs.mybatis.login.entity.UserBeanFactory
+#    object-factory: 'com.xs.mybatis.login.entity.UserBeanFactory'
+    cache-enabled: true
 server:
   port: 8080
 pagehelper:

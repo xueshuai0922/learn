@@ -25,4 +25,6 @@ public interface IUserService extends IService<User> {
      CommonResult selectByPage();
 
      CommonResult deleteBatch(String  ids);
+
+     CommonResult insert();
 }

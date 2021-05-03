@@ -9,13 +9,14 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
  * @author xueshuai
  * @date 2021/2/28 18:12
  * @description  测试内容：读写锁和 重入锁的 速度对比
- *              结果：读写锁速度快，
+ *              结果：读写锁速度快，读写锁，多个线程读只需sleep1秒中。而ReentrantLock需要每个线程都sleep一秒
  */
 public class ReadWriteLockTest {
 
     private  static  int ss = 0;
     public static  void read(Lock lock){
         try {
+            //如果这个为读锁，那么多线程进来，读操作不会被阻塞，所以多个线程一起进来，只会整体sleep一秒钟，然后，都读到数据
             lock.lock();
             try {
                 Thread.sleep(1000);

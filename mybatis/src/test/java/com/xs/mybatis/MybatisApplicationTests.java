@@ -70,7 +70,7 @@ public class MybatisApplicationTests {
 	@Test
 	public void insert(){
 		User user = new User();
-		user.setName("插入");
+		user.setName("xs");
 		user.setAge(10);
 		user.setEmail("827681776@qq.com");
 
@@ -82,7 +82,7 @@ public class MybatisApplicationTests {
 	public void del(){
 		int delete = userMapper.deleteById(2);
 		boolean flag = delete>0? true:false;
-		System.out.println("插入是否成功："+flag);
+		System.out.println("删除是否成功："+flag);
 	}
 	//------------------------------------mybatis plus结束-----------------------
 

@@ -1,6 +1,8 @@
 package com.xs.mybatis.config;
 
+import com.xs.mybatis.interceptors.SqlTimeInterceptor;
 import com.xs.mybatis.login.entity.UserBeanFactory;
+import org.apache.ibatis.plugin.Interceptor;
 import org.apache.ibatis.reflection.factory.ObjectFactory;
 import org.apache.ibatis.type.TypeHandler;
 import org.springframework.context.annotation.Bean;
@@ -16,8 +18,14 @@ public class MybatisConfig {
 
 
     @Bean
-    public TypeHandler customTypeHandler(){
-        return  new CustomTypeHandler();
+    public TypeHandler customTypeHandler() {
+        return new CustomTypeHandler();
     }
+
+    @Bean
+    public Interceptor sqlTimeInterceptor() {
+        return new SqlTimeInterceptor();
+    }
+
 
 }

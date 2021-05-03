@@ -9,7 +9,7 @@ import java.net.Socket;
 /**
  * @author xueshuai
  * @date 2021/2/10 17:14
- * @description bio服务端
+ * @description bio服务端  cmd 中的telnet来当客户端
  */
 public class BioSocketTest {
     public static void main(String[] args) throws Exception {
@@ -44,7 +44,6 @@ public class BioSocketTest {
                         exception.printStackTrace();
                     } finally {
                         System.out.println("4）读取结束");
-
                     }
                 }
             }.setSS(client)).start();

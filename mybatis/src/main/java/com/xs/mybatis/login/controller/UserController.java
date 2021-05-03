@@ -48,4 +48,9 @@ public class UserController {
         public CommonResult deleteBatch( @PathVariable String ids){
                 return userService.deleteBatch(ids);
         }
+
+        @PostMapping("/insert")
+        public CommonResult insert(){
+                return userService.insert();
+        }
 }

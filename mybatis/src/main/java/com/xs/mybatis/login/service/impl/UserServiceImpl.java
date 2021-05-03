@@ -8,6 +8,8 @@ import com.xs.mybatis.login.mapper.UserMapper;
 import com.xs.mybatis.login.service.IUserService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.util.Arrays;
@@ -30,6 +32,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
     @Override
     public CommonResult select() {
         List<User> userList = userMapper.select();
+        List<User> select = userMapper.select();
         return CommonResult.success(userList);
     }
 
@@ -59,5 +62,41 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
         if(split.length==0) return null;
         userMapper.deleteBatch(Arrays.asList(split));
         return CommonResult.success("success");
+    }
+
+    @Override
+    @Transactional(rollbackFor = {Exception.class,Error.class},propagation = Propagation.REQUIRED)
+    public CommonResult insert() {
+        try {
+            for (int i = 0; i < 3; i++) {
+                if(i==2){
+                    int s = 9/0;
+                }
+                User user = new User();
+                user.setId(0L);
+                user.setName("外部事务");
+                user.setAge(0);
+                user.setEmail("ssdd");
+                userMapper.insert(user);
+            }
+            insertInner();
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw e;
+        }
+        return null;
+    }
+
+    //测试事务、
+    @Transactional(rollbackFor = {Exception.class,Error.class},propagation = Propagation.REQUIRED)
+    public void insertInner(){
+        User user = new User();
+        user.setId(0L);
+        user.setName("内部事务");
+        user.setAge(0);
+        user.setEmail("");
+
+        userMapper.insert(user);
+        int i = 9/0;
     }
 }

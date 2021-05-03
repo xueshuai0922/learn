@@ -1,6 +1,6 @@
 package com.xs.jedis;
 
-import redis.clients.jedis.Jedis;
+//import redis.clients.jedis.Jedis;
 
 /**
  * @author xueshuai
@@ -9,9 +9,9 @@ import redis.clients.jedis.Jedis;
  */
 public class JedisTest {
 
-    public static void main(String[] args) {
-        Jedis jedis = new Jedis("118.190.141.119", 6379);
-        jedis.connect();
-        System.out.println(jedis.isConnected());
-    }
+//    public static void main(String[] args) {
+//        Jedis jedis = new Jedis("118.190.141.119", 6379);
+//        jedis.connect();
+//        System.out.println(jedis.isConnected());
+//    }
 }
