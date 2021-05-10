@@ -1,9 +1,6 @@
-package com.xs.javabase.iostream;
-
-import cn.hutool.core.io.file.FileReader;
+package com.xs.javabase.serial.iostream;
 
 import java.io.*;
-import java.util.List;
 
 /**
  * @author xueshuai

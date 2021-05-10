@@ -1,0 +1,9 @@
+server:
+  port: 7000
+eureka:
+  client:
+    service-url:
+      defaultZone: http://e01.com:8000/eureka/
+spring:
+  application:
+    name: provider

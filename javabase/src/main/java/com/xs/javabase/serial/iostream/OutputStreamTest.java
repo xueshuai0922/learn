@@ -1,4 +1,4 @@
-package com.xs.javabase.iostream;
+package com.xs.javabase.serial.iostream;
 
 import java.io.FileOutputStream;
 import java.io.IOException;

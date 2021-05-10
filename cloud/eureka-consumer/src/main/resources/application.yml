@@ -1,0 +1,26 @@
+server:
+  port: 9000
+
+spring:
+  application:
+    name: consumer
+  profiles:
+    active: nacos
+logging:
+  level:
+    com.xs: debug
+
+
+#eureka配置
+---
+spring:
+  profiles: eureka
+eureka:
+  client:
+    service-url:
+      defaultZone: http://e01.com:8000/eureka/
+    healthcheck:
+      enabled: true
+ribbon:
+  ConnectTimeout: 1000
+

@@ -1,0 +1,34 @@
+spring:
+  application:
+    name: eureka-server
+  profiles:
+    active: eureka1
+server:
+  port: 8000
+---
+spring:
+  profiles: eureka1
+eureka:
+  client:
+    service-url:
+      defaultZone: http://e01.com:8000/eureka/
+    #     是否注册到eureka server 中去
+    register-with-eureka: true
+    #    是否拉取注册信息
+    fetch-registry: true
+  instance:
+    hostname: e01.com
+
+---
+spring:
+  profiles: eureka2
+eureka:
+  client:
+    service-url:
+      defaultZone: http://e02.com:8000/eureka/
+    #     是否注册到eureka
+    register-with-eureka: true
+    #    是否拉取注册信息
+    fetch-registry: true
+  instance:
+    hostname: e02.com
