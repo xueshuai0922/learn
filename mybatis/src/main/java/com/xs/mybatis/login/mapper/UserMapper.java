@@ -18,4 +18,6 @@ public interface UserMapper extends BaseMapper<User> {
         User selectOne(String id);
         User selectChoose(User user);
         void deleteBatch(List<String> list);
+        void insertBatch(List<User> list);
+        void updateBatch(List<User> list);
 }

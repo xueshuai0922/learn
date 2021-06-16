@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.xs.mybatis.login.mapper.UserMapper">
-<!--    <cache/>-->
+    <!--    <cache/>-->
     <resultMap id="User" type="com.xs.mybatis.login.entity.User">
 
         <result property="email" column="email"></result>
@@ -11,7 +11,7 @@
 
     </resultMap>
 
-    <select id="select" resultMap="User" >
+    <select id="select" resultMap="User">
         select * from user
     </select>
     <select id="selectOne" resultType="com.xs.mybatis.login.entity.User" parameterType="string">
@@ -31,7 +31,7 @@
             <trim prefix="and">
                 <choose>
                     <when test="name!=null">
-                         u.name = #{name}
+                        u.name = #{name}
                     </when>
                     <when test="age!=null">
                         u.age = #{age}
@@ -46,13 +46,35 @@
     </select>
 
     <delete id="deleteBatch" parameterType="java.util.List">
-        delete from user where id  in
+        delete from user where id in
         <foreach collection="list" item="item" open="(" close=")" separator=",">
             #{item,jdbcType=VARCHAR}
         </foreach>
     </delete>
 
 
+    <!--    批量插入-->
 
+    <insert id="insertBatch" parameterType="java.util.List">
+        insert into user (age,name,email)
+        values
+        <foreach collection="list" item="item" separator="," >
+            (#{item.age},
+            #{item.name},
+            #{item.email})
+        </foreach>
+    </insert>
+
+    <update id="updateBatch" parameterType="list">
+
+
+        <foreach collection="list" separator=";" item="item">
+            update user set
+            age=#{item.age},
+            name=#{item.name},
+            email=#{item.email}
+
+        </foreach>
+    </update>
 
 </mapper>

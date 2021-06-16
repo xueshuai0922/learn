@@ -19,6 +19,6 @@ public class ApplicationListenerTest implements ApplicationListener {
     @Override
     public void onApplicationEvent(ApplicationEvent applicationEvent) {
 
-        System.out.println("接收到的事件："+applicationEvent);
+//        System.out.println("接收到的事件："+applicationEvent);
     }
 }

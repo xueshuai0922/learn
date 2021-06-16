@@ -24,7 +24,13 @@ spring:
           nacos:
             server-addr: ${spring.cloud.nacos.discovery.server-addr}
             data-id: ${spring.application.name}-sentinel
-            rule-type: flow
+            rule-type: flow  # 类型来自RuleType类
+        degrade:
+          nacos:
+            server-addr: ${spring.cloud.nacos.discovery.server-addr}
+            data-id: ${spring.application.name}-sentinel-degrade
+            rule-type: degrade  # 类型来自RuleType类
+      eager: true
 
 server:
   port: 6000

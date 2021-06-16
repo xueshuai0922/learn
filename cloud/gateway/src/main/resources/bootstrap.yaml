@@ -1,0 +1,33 @@
+server:
+  port: 80
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+      config:
+        file-extension: yaml  #默认是properties的，这里修改为yaml，可以在nacos中使用yaml
+    loadbalancer:
+      ribbon:
+        enabled: false   #使用reactiveLoadBalancedFilterClient
+    sentinel:
+      transport:
+        dashboard: 127.0.0.1:8080
+        port: 8719
+      eager: true #spring应用创建就可以心跳连接sentinel，使得配置生效
+      datasource:
+        ds:
+          nacos:
+            server-addr: ${spring.cloud.nacos.discovery.server-addr}
+            data-id: ${spring.application.name}-sentinel
+            rule-type: flow
+  application:
+    name: gateway
+management:
+  endpoints:
+    web:
+      exposure:
+        include: gateway
+  endpoint:
+    gateway:
+      enabled: true

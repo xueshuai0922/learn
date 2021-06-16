@@ -68,18 +68,15 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
     @Transactional(rollbackFor = {Exception.class,Error.class},propagation = Propagation.REQUIRED)
     public CommonResult insert() {
         try {
-            for (int i = 0; i < 3; i++) {
-                if(i==2){
-                    int s = 9/0;
-                }
+            for (int i = 0; i < 100; i++) {
                 User user = new User();
-                user.setId(0L);
+                user.setId((long)i);
                 user.setName("外部事务");
                 user.setAge(0);
                 user.setEmail("ssdd");
                 userMapper.insert(user);
             }
-            insertInner();
+//            insertInner();
         } catch (Exception e) {
             e.printStackTrace();
             throw e;
@@ -97,6 +94,5 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
         user.setEmail("");
 
         userMapper.insert(user);
-        int i = 9/0;
     }
 }

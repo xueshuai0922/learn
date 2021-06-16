@@ -20,6 +20,8 @@
         <module>eureka-provider</module>
         <module>nacos-consumer</module>
         <module>nacos-provider</module>
+        <module>gateway</module>
+        <module>webflux</module>
     </modules>
     <properties>
         <java.version>1.8</java.version>
@@ -29,10 +31,7 @@
         <alibaba.version>2.2.5.RELEASE</alibaba.version>
     </properties>
     <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
+
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter</artifactId>
@@ -63,6 +62,7 @@
                 </exclusion>
             </exclusions>
         </dependency>
+        <!--   sentinel     -->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
@@ -73,6 +73,27 @@
             <artifactId>sentinel-datasource-nacos</artifactId>
             <!--<scope>test</scope>-->
         </dependency>
+
+        <!-- skywalking链路追踪-->
+        <!-- logback日志依赖-->
+        <dependency>
+            <groupId>org.apache.skywalking</groupId>
+            <artifactId>apm-toolkit-logback-1.x</artifactId>
+            <version>8.5.0</version>
+        </dependency>
+        <!--手工日志打点依赖-->
+        <dependency>
+            <groupId>org.apache.skywalking</groupId>
+            <artifactId>apm-toolkit-trace</artifactId>
+            <version>8.5.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.16</version>
+        </dependency>
+
+
     </dependencies>
     <dependencyManagement>
         <dependencies>

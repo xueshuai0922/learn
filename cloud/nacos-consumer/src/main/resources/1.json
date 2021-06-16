@@ -1,0 +1,23 @@
+{
+  "success": true,
+  "code": 0,
+  "msg": "success",
+  "data": [
+    {
+      "id": 4,
+      "app": "nacos-consumer",
+      "ip": "192.168.26.45",
+      "port": 8720,
+      "resource": "/sentinel/hello",
+      "limitApp": "default",
+      "count": 1.0,
+      "timeWindow": 1,
+      "grade": 2,
+      "minRequestAmount": 1,
+      "slowRatioThreshold": 1.0,
+      "statIntervalMs": 1000,
+      "gmtCreate": null,
+      "gmtModified": null
+    }
+  ]
+}

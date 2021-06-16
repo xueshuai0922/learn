@@ -2,8 +2,10 @@ package com.xs.extspring.listener;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.InitializingBean;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Component;
 
 /**
@@ -17,6 +19,14 @@ public class CustomEventPublisher  implements ApplicationContextAware , Initiali
     private  ApplicationContext applicationContext;
 
 
+    @Autowired
+    private ApplicationEventPublisher publisher;
+
+
+    public CustomEventPublisher(){
+        //构造-->autowired--->InitializingBean
+        System.out.println("CustomEventPublisher--------------构造");
+    }
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
         this.applicationContext=applicationContext;
@@ -24,6 +34,11 @@ public class CustomEventPublisher  implements ApplicationContextAware , Initiali
 
     @Override
     public void afterPropertiesSet() throws Exception {
+        System.out.println("---------InitializingBean-------");
         this.applicationContext.publishEvent(new CustomEvent("xs"));
+
+
+        System.out.println("-----------ApplicationEventPublisher 发布事件---------------");
+        publisher.publishEvent(new CustomEvent("ApplicationEventPublisher"));
     }
 }

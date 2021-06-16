@@ -27,7 +27,23 @@ CREATE TABLE `user`  (
   `age` int(11) NULL DEFAULT NULL COMMENT '年龄',
   `email` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '邮箱',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = MyISAM AUTO_INCREMENT = 1379977709178478594 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1379977709178478594 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+
+
+CREATE TABLE `order` (
+  `order_id` int(11) NOT NULL,
+  `order_name` varchar(255) DEFAULT NULL,
+  `order_desc` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`order_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `order_detail` (
+  `detial_id` int(11) NOT NULL,
+  `order_id` int(11) DEFAULT NULL,
+  `order_detail_name` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`detial_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 
 -- ----------------------------
 -- Records of user

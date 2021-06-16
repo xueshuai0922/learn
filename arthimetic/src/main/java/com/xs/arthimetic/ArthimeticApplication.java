@@ -1,0 +1,13 @@
+package com.xs.arthimetic;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class ArthimeticApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(ArthimeticApplication.class, args);
+	}
+
+}

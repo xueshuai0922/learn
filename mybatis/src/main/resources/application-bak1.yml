@@ -1,0 +1,82 @@
+mybatis:
+  configuration:
+    cache-enabled: true
+  type-aliases-package: com.xs.mybatis
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+pagehelper:
+  default-count: false
+server:
+  port: 8080
+spring:
+  shardingsphere:
+    datasource:
+      names: ds0,ds01
+      ds0:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        password: dingding123456
+        type: com.alibaba.druid.pool.DruidDataSource
+        url: jdbc:mysql://localhost:3306/root?useUnicode=true&characterEncoding=UTF-8
+        username: root
+      ds1:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        password: dingding123456
+        type: com.alibaba.druid.pool.DruidDataSource
+        url: jdbc:mysql://localhost:3306/root1?useUnicode=true&characterEncoding=UTF-8
+        username: root1
+    masterslave:
+      name: xx
+
+    props:
+      sql:
+        show: true
+    rules:
+      sharding:
+        #                auto-tables:
+        #                    <auto-table-name>:
+        #                        actual-data-sources: '# 数据源名'
+        #                        sharding-strategy:
+        #                            standard:
+        #                                sharding-algorithm: '# 自动分片算法名称'
+        #                                sharding-column: '# 分片列名称'
+        #                binding-tables:
+        #                - '# 绑定表规则列表'
+        #                - '# 绑定表规则列表'
+        #                binding-tables[x]: '# 绑定表规则列表'
+        #                broadcast-tables:
+        #                - '# 广播表规则列表'
+        #                - '# 广播表规则列表'
+        #                broadcast-tables[x]: '# 广播表规则列表'
+        #                key-generators:
+        #                    <key-generate-algorithm-name>:
+        #                        props:
+        #                            xxx: '# 分布式序列算法属性配置'
+        #                        type: '# 分布式序列算法类型'
+        #                sharding-algorithms:
+        #                    <sharding-algorithm-name>:
+        #                        props:
+        #                            xxx: '# 分片算法属性配置'
+        #                        type: '# 分片算法类型'
+        tables:
+          user:
+            actual-data-nodes: ds0.user_$->{0..1}
+            #                        database-strategy: #数据库分库策略
+            #                            standard:
+            #                                <sharding-algorithm-name>:
+            #                                    sharding-algorithm-name: '# 分片算法名称'
+            #                                    sharding-column: '# 分片列名称'
+            table-strategy: #表分片策略
+              inline: #行表达式分片策略
+                sharding-column: id #分片的字段
+                algorithm-expression: user_$->{user_id % 2} #分片的算法
+            key-generate-strategy:
+              column: '# 分布式序列列名称'
+              key-generator-name: '# 分布式序列算法名称'
+    sharding:
+      default-database-strategy:
+        xxx: '# 默认数据库分片策略'
+      default-key-generate-strategy:
+        xxx: '# 默认分布式序列策略'
+      default-table-strategy:
+        xxx: '# 默认表分片策略'

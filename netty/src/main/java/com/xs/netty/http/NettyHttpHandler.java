@@ -3,12 +3,10 @@ package com.xs.netty.http;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import io.netty.channel.Channel;
-import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 import io.netty.handler.codec.http.*;
 import io.netty.util.CharsetUtil;
-import io.netty.util.concurrent.EventExecutorGroup;
 
 /**
  * @author xueshuai
@@ -21,7 +19,7 @@ public class NettyHttpHandler extends SimpleChannelInboundHandler<FullHttpReques
     protected void channelRead0(ChannelHandlerContext ctx, FullHttpRequest msg) throws Exception {
 
 
-        Thread.sleep(20000);
+//        Thread.sleep(20000);
 
 
         if (msg instanceof FullHttpRequest) {

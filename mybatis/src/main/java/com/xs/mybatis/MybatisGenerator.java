@@ -9,7 +9,6 @@ import com.baomidou.mybatisplus.generator.config.*;
 import com.baomidou.mybatisplus.generator.config.po.TableInfo;
 import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
 import com.baomidou.mybatisplus.generator.engine.FreemarkerTemplateEngine;
-import com.baomidou.mybatisplus.generator.engine.VelocityTemplateEngine;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -60,7 +59,7 @@ public class MybatisGenerator {
         // dsc.setSchemaName("public");
         dsc.setDriverName("com.mysql.cj.jdbc.Driver");
         dsc.setUsername("root");
-        dsc.setPassword("123456");
+        dsc.setPassword("dingding123456");
         mpg.setDataSource(dsc);
 
         // 包配置

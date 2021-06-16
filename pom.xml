@@ -30,6 +30,7 @@
     </build>
     <modules>
         <module>spring</module>
+        <module>gateway</module>
     </modules>
 
     <dependencies>
