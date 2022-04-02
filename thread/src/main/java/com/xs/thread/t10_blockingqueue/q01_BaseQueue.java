@@ -1,7 +1,5 @@
 package com.xs.thread.t10_blockingqueue;
 
-import java.util.concurrent.ConcurrentLinkedQueue;
-import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.LinkedBlockingQueue;
 
 /**
@@ -10,7 +8,7 @@ import java.util.concurrent.LinkedBlockingQueue;
  * @description
  */
 public class q01_BaseQueue {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         LinkedBlockingQueue<Object> queue = new LinkedBlockingQueue<>(1);
 
 

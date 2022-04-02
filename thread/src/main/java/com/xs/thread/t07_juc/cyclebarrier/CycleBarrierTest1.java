@@ -6,7 +6,7 @@ import java.util.concurrent.CyclicBarrier;
 /**
  * @author xueshuai
  * @date 2021/2/28 17:38
- * @description CycleBarrier 满足线程数，才会继续
+ * @description CycleBarrier 循环+满足线程数，才会继续
  */
 public class CycleBarrierTest1 {
 

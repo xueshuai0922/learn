@@ -22,8 +22,11 @@ import java.util.List;
  * @description
  */
 
+/**
+ * 自动配置和负载均衡转发
+ */
 @RestController
-@RefreshScope //配置自动刷新
+@RefreshScope
 public class ConsumerController {
 
 

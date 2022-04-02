@@ -9,9 +9,9 @@ import java.util.concurrent.ExecutionException;
  * @date 2021/4/12 14:49
  * @description
  */
-public class CompleteFutureTaskTest {
+public  class CompleteFutureTaskTest {
 
-    public static void main(String[] args) throws ExecutionException, InterruptedException {
+    public   static void main(String[] args) throws ExecutionException, InterruptedException {
         CompletableFuture.supplyAsync(User::getAge)
                 .thenApply((age) -> {
                     System.out.println(age);

@@ -26,7 +26,6 @@ public class FutureTaskTest {
         System.out.println(o+"   结束时间"+new Date());
         System.out.println("main线程 结束的时间"+new Date());
 
-
         //不进行关闭，future的get就会一直阻塞
         executorService.shutdown();
 

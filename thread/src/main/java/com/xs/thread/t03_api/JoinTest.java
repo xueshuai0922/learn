@@ -19,7 +19,7 @@ public class JoinTest {
 //                    e.printStackTrace();
 //                }
             }
-        });
+        },"joinThread");
         joinThread.start();
 
 

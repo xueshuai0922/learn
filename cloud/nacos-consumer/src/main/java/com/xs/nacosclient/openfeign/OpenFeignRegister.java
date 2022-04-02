@@ -28,7 +28,13 @@ import java.util.Set;
 /**
  * @author xueshuai
  * @date 2021/5/11 9:36
- * @description
+ * @description openFeign的主要作用就是实现简单有效的RPC，远程调用就像本地调用一样简单
+ *    1.rpc的主要关注的点：http请求，序列和反序列化
+ *    2.openFeign结合SpringBoot 是如何实现的
+ *      利用spring的强大的接口，对接口生成动态代理类
+ *      一是在创建的时候，自动配置类中增加了相关HTTP 组件接口，默认实现Apache的http client
+ *      二是在
+ *
  */
 
 public class OpenFeignRegister implements ImportBeanDefinitionRegistrar, ResourceLoaderAware, EnvironmentAware,
@@ -40,10 +46,6 @@ public class OpenFeignRegister implements ImportBeanDefinitionRegistrar, Resourc
     private BeanFactory beanFactory;
 
 
-//    @Bean
-//    public RestTemplate restTemplate(){
-//        return  new RestTemplate();
-//    };
 
     private RestTemplate restTemplate = new RestTemplate();
 
@@ -54,7 +56,7 @@ public class OpenFeignRegister implements ImportBeanDefinitionRegistrar, Resourc
      */
     @Override
     public void registerBeanDefinitions(AnnotationMetadata metadata, BeanDefinitionRegistry registry) {
-
+        System.out.println("registerBeanDefinitions");
         registerFeignClients(metadata, registry);
 
     }
@@ -162,16 +164,19 @@ public class OpenFeignRegister implements ImportBeanDefinitionRegistrar, Resourc
 
     @Override
     public void setEnvironment(Environment environment) {
+        System.out.println("setEnvironment");
         this.environment = environment;
     }
 
     @Override
     public void setResourceLoader(ResourceLoader resourceLoader) {
+        System.out.println("setResourceLoader");
         this.resourceLoader = resourceLoader;
     }
 
     @Override
     public void setBeanFactory(BeanFactory beanFactory) throws BeansException {
+        System.out.println("setBeanFactory");
         this.beanFactory = beanFactory;
     }
 

@@ -77,4 +77,10 @@
         </foreach>
     </update>
 
+    <!-- 添加用户 -->
+    <insert id="updateBatch" parameterType="com.xs.mybatis.login.entity.User" statementType="CALLABLE">
+		{call insert_user(
+		#{id,mode=OUT,jdbcType=INTEGER},#{name,mode=IN},#{sex,mode=IN},#{age,mode=IN})}
+	</insert>
+
 </mapper>

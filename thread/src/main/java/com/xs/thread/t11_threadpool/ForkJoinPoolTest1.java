@@ -13,7 +13,7 @@ public class ForkJoinPoolTest1 {
     static long[] ints = new long[100000000];
 
     static {
-        for (int i = 0; i < 100000000; i++) {
+        for (int i = 0; i < 10000_0000; i++) {
             ints[i]=i;
         }
 
@@ -52,13 +52,15 @@ public class ForkJoinPoolTest1 {
         @Override
         protected Long compute() {
             long sum=0;
-            if(end-start<100000000/2){
+            //如果大小小于阈值，则进行顺序计算
+            if(end-start<10000_0000/2){
                 for (int i = start; i < end; i++) {
                     sum+=ints[i];
                 }
                 return sum;
             }
             int mid=start+(end-start)/2;
+            System.out.println("mid: "+mid);
             CountTask countTask = new CountTask(start, mid);
             CountTask countTask1 = new CountTask(mid, end);
             countTask.fork();

@@ -11,6 +11,9 @@ import org.springframework.web.bind.annotation.RestController;
  * @description 测试openFeign的controller
  */
 
+/**
+ * 测试openFeign
+ */
 @RestController
 public class OpenFeignController {
 
@@ -18,8 +21,13 @@ public class OpenFeignController {
     private OpenFeignService service;
 
 
+    public OpenFeignController() {
+        System.out.println("扫描到了---------------");
+    }
+
     @GetMapping("/fegin/getport")
     public String getPort(){
+        System.out.println("----------------进入了");
       return service.getPort();
     }
 }

@@ -6,7 +6,7 @@ spring:
       discovery:
         server-addr: 127.0.0.1:8848
   profiles:
-    active: 1
+    active: 0
 
 ---
 server:
@@ -18,3 +18,4 @@ server:
   port: 5001
 spring:
   profiles: 1
+
