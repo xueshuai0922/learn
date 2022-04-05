@@ -31,6 +31,7 @@
     <modules>
         <module>spring</module>
         <module>gateway</module>
+        <module>MongDB</module>
     </modules>
 
     <dependencies>

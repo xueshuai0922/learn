@@ -18,6 +18,8 @@ public class DistributedBlock {
                 .setPassword("827681776");
         RedissonClient redissonClient = Redisson.create();
         RLock lockname = redissonClient.getLock("lockname");
+        lockname.tryLock();
+
     }
 
 }

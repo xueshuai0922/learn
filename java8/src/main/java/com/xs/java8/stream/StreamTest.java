@@ -354,10 +354,51 @@ public class StreamTest {
 
     }
 
-
+    /**
+     * Stream#Iterate 创建无限数据源
+     */
     @Test
     public void StreamIterate() {
+        //偶数
         Stream.iterate(0,a->a+2).limit(10).forEach(System.out::println);
+
+        //斐波纳契数列
+        Stream.iterate(new int[]{0,1},t->new int[]{t[1],t[0]+t[1]}).limit(20)
+                .forEach(t->System.out.println("("+t[0]+","+t[1]+")"));
+
+    }
+
+    /**
+     * Stream
+     * Stream
+     */
+    @Test
+    public void StreamTest() {
+
+        int end  = 1000000;
+        long start = System.currentTimeMillis();
+        //偶数
+        List<Integer> collect1 = Stream.iterate(0, a -> a + 2).limit(end).collect(Collectors.toList());
+        long endTime = System.currentTimeMillis();
+        System.out.println("Stream 个数 "+end+"执行时间： "+(endTime-start));
+
+
+
+        long start1 = System.currentTimeMillis();
+        List<Integer> integerList = Stream.iterate(0, a -> a + 2)
+                .parallel()
+                .limit(end).collect(Collectors.toList());
+        long endTime1 = System.currentTimeMillis();
+        System.out.println("parallel Stream 个数 "+end+"执行时间： "+(endTime1-start1));
+
+
+        long start2 = System.currentTimeMillis();
+        IntStream limit = IntStream.iterate(0, a -> a + 2)
+                .parallel()
+                .limit(end);
+        ArrayList<Object> collect = limit.collect(ArrayList::new, ArrayList::add, ArrayList::addAll);
+        long endTime2 = System.currentTimeMillis();
+        System.out.println("IntStream 个数 "+end+"执行时间： "+(endTime2-start2));
 
     }
 
