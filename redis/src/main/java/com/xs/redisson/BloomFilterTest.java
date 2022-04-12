@@ -26,7 +26,7 @@ public class BloomFilterTest {
         RedissonClient redissonClient = Redisson.create(config);
         RBloomFilter<Object> bloomFilter = redissonClient.getBloomFilter("bloomFilter");
         //初始化一个长度为10000的数组，误判率为1%
-        bloomFilter.tryInit(10000,0.01);
+        bloomFilter.tryInit(1000000,0.01);
 
         bloomFilter.add(1);
         //判断是否存在
@@ -34,6 +34,8 @@ public class BloomFilterTest {
         System.out.println("是否存在1？ "+contains);
         boolean contains1 = bloomFilter.contains(22);
         System.out.println("是否存在22？ "+contains1);
+
+
 
     }
 }

@@ -1,10 +1,9 @@
 package com.xs.mybatis.login.service;
 
+import com.baomidou.mybatisplus.extension.service.IService;
 import com.xs.mybatis.common.CommonResult;
 import com.xs.mybatis.login.entity.User;
-import com.baomidou.mybatisplus.extension.service.IService;
-
-import java.util.List;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * <p>
@@ -17,7 +16,7 @@ import java.util.List;
 public interface IUserService extends IService<User> {
 
     CommonResult select();
-
+    @Transactional(rollbackFor = Exception.class)
     CommonResult selectOne(String id);
 
     CommonResult selectChoose(User user);

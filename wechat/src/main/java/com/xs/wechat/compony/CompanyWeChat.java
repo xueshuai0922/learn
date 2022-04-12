@@ -25,7 +25,7 @@ public class CompanyWeChat {
 
     private final String accessToken ="L2RbQZd8nyu0kJsUkv8aBdzPyNdaydTKh4up8qe9sSPZLVAMtuwiHGEty7u0B28OmdWH1JIygoUYMCUKpSq9-V9hTuN-A5QCde3d8eU1YR25yuwMggbU51PZWHteOtOrN3Eu2c9vJ60-U9GCk2SfBwHHIDKn3CmuB-ZY8ab6wc064J14y4d9rfTtDFOxlhFsshTWXU8nTjFIQXE-69NbYw";
     //企业应用id
-    private final long  agentId=1000002;
+    private final long  agentId= 1_000_002;
 
     @GetMapping("/SendWxMsg")
     public  void  SendWxMsg(){

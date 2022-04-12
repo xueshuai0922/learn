@@ -2,13 +2,11 @@ package com.xs.redis;
 
 import com.xs.redis.util.RedisUtil;
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.autoconfigure.cache.CacheProperties;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import javax.annotation.Resource;
 
 @SpringBootTest
-
 class RedisApplicationTests {
 
     @Test
