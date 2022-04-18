@@ -1,6 +1,7 @@
 package com.xs.innerSpring.traction;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cglib.core.DebuggingClassWriter;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -24,8 +25,15 @@ public class UserServiceOne {
     @Autowired
     JdbcTemplate jdbcTemplate;
 
-    @Transactional
+
+    public UserServiceOne() {
+        System.out.println("创建UserServiceOne");
+    }
+
+    //    @Transactional(readOnly = true) readOnly 只读属性，保证只是查询，修改时就会报错
+    @Transactional()
     public void  updateUser(){
+        System.setProperty(DebuggingClassWriter.DEBUG_LOCATION_PROPERTY,"D:\\CGLIB");
         jdbcTemplate.update("update user set age =? where name=?;",10,"Tom");
 //        userServiceTwo.updateUser_REQUIRES_NEW();
         userServiceTwo.updateUser_NESTED();//外部事务回滚，则嵌套子事务也会回滚，子事务不影响外部事务

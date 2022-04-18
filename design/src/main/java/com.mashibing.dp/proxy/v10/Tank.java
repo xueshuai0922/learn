@@ -2,10 +2,11 @@ package com.mashibing.dp.proxy.v10;
 
 
 
+import org.springframework.cglib.core.DebuggingClassWriter;
+
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
-import java.util.Arrays;
 import java.util.Random;
 
 /**
@@ -43,6 +44,7 @@ public class Tank implements Movable {
     }
 
     public static void main(String[] args) {
+        System.setProperty(DebuggingClassWriter.DEBUG_LOCATION_PROPERTY,"D:\\CGLIB");
         Tank tank = new Tank();
 
         System.getProperties().put("jdk.proxy.ProxyGenerator.saveGeneratedFiles","true");

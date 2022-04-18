@@ -19,6 +19,7 @@ public class ConstructBean {
 //    @Autowired
 //    @Resource resource 只能通过setter和字段注入的方式，不能通过构造器的方式进行注入
     public ConstructBean(AInterface aInterface, BInterface bInterface) {
+        System.out.println("ConstructBean");
         this.aInterface = aInterface;
         this.bInterface = bInterface;
     }
