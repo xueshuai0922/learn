@@ -21,7 +21,16 @@ public class SpringApplication {
 
 
     //单例池
-    private  ConcurrentHashMap<String ,Object> singletonBeanMap = new ConcurrentHashMap<>();
+    private  ConcurrentHashMap<String ,Object> singletonObjects = new ConcurrentHashMap<>();
+
+
+
+    private  ConcurrentHashMap<String ,Object> singletonFactories = new ConcurrentHashMap<>();
+
+
+
+
+
 
 
 
@@ -103,6 +112,8 @@ public class SpringApplication {
         try {
             //todo 为了简化,这里默认使用无参构造器
             Object bean = clazz.getConstructor().newInstance();
+            singletonFactories.put(beanName,bean);
+
 
 
             //3.【依赖注入】
@@ -170,16 +181,20 @@ public class SpringApplication {
             throw  new RuntimeException("找不到BeanName: "+beanName);
         }
 
+
         String type = beanDefinition.getType();
         //如果是单例bean,从单例池中先拿，存在返回，不存在则创建，再返回
         if("singleton".equals(type) ){
-            Object o = singletonBeanMap.get(beanName);
-            if(o==null){
-                Object bean = createBean(beanName, beanDefinition);
-                singletonBeanMap.put(beanName, bean);
-                return bean;
+            Object singletonBean = singletonObjects.get(beanName);
+            if(singletonBean==null){
+                 singletonBean  = singletonFactories.get(beanName);
+                if(singletonBean!=null)
+                    return  singletonBean;
+                singletonBean = createBean(beanName, beanDefinition);
+                singletonObjects.put(beanName, singletonBean);
+                return singletonBean;
             }
-            return o;
+            return singletonBean;
         }else {
             return createBean(beanName, beanDefinition);
         }
