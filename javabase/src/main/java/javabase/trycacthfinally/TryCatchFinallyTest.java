@@ -1,4 +1,4 @@
-package com.xs.javabase.trycacthfinally;
+package javabase.trycacthfinally;
 
 /**
  * @author xueshuai

@@ -1,4 +1,4 @@
-package com.xs.javabase.reflect;
+package javabase.reflect;
 
 
 import sun.reflect.generics.reflectiveObjects.ParameterizedTypeImpl;

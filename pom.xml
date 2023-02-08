@@ -30,9 +30,9 @@
     </build>
     <modules>
         <module>spring</module>
-        <module>gateway</module>
-        <module>MongDB</module>
-        <module>xueshuai-spring</module>
+<!--        <module>gateway</module>-->
+<!--        <module>MongDB</module>-->
+<!--        <module>xueshuai-spring</module>-->
         <module>spirng-xueshuai</module>
     </modules>
 

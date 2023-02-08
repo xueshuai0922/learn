@@ -1,4 +1,4 @@
-package com.xs.javabase.datasturctue;
+package javabase.datasturctue;
 
 import java.util.Random;
 

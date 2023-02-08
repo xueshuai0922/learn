@@ -1,4 +1,4 @@
-package com.xs.javabase.serial;
+package javabase.serial;
 
 import java.io.Serializable;
 
