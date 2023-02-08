@@ -1,0 +1,80 @@
+{
+  "ResultData": {
+    "PersonalCardViewModel": {
+      "ISMenu": 0,
+      "PatientList": null
+    },
+    "PersonalAddViewModel": {
+      "PaperTypeList": [],
+      "UserTypeList": [
+        {
+          "UserTypeId": 0,
+          "UserTypeName": "成人"
+        },
+        {
+          "UserTypeId": 1,
+          "UserTypeName": "儿童"
+        }
+      ],
+      "SexList": [
+        {
+          "SexCode": 1,
+          "SexName": "男"
+        },
+        {
+          "SexCode": 2,
+          "SexName": "女"
+        }
+      ],
+      "CurUserType": 0,
+      "CurName": null,
+      "CurSex": 0,
+      "CurPaperType": 0,
+      "CurPaperNo": null,
+      "CurMobile": null,
+      "CurBirthday": null,
+      "PublicMsg": null
+    },
+    "PersonalBookInfo": {
+      "SerialNo": null,
+      "PatientVisits": null,
+      "OrgId": "010e5278-aa45-81d0-4d3e-7d5be619b7d9",
+      "OrgCode": "6101020016",
+      "HospitalName": "交大二附院主院区",
+      "DeptName": "消化内科门诊",
+      "DepartmentId": "4b95d5be-1fdf-4b43-a122-c9ca03c76949",
+      "ClinicLabel": "王进海",
+      "ClinicLabelId": "a7b48ea8-ced5-434d-8754-ff55b729985a",
+      "VisitDate": "2023-02-13",
+      "VisitDateTimePart": null,
+      "BookStateText": null,
+      "BookState": 0,
+      "BookType": null,
+      "CreatDate": null,
+      "DoctorName": "王进海",
+      "OperationType": null,
+      "NoonId": 1,
+      "Price": "0.00",
+      "NoonText": "上午",
+      "WeekText": "星期一",
+      "OrderId": null,
+      "OrderNo": null,
+      "ClinicBookMode": "2",
+      "PaymentStatusEnum": 0
+    },
+    "CardList": [],
+    "TimePartResponsesList": [
+      {
+        "StartTime": "10:20",
+        "EndTime": "10:50",
+        "Count": 4,
+        "Total": 5,
+        "SchmDetailId": "上午"
+      }
+    ]
+  },
+  "Message": "获取预约确认数据",
+  "Code": null,
+  "TotalCount": 0,
+  "ResultCode": 1
+}

@@ -1,0 +1,122 @@
+{
+  "ResultData": [
+    {
+      "ClinicLabelId": "045b9935-0aa6-433d-8898-d19454278342",
+      "ClinicLabelName": "任建文",
+      "DepartmentId": "19d59834-3c11-4f91-9934-2e4294824616",
+      "DepartmentName": "重度痤疮门诊",
+      "OrganizationId": "010e5278-aa45-81d0-4d3e-7d5be619b7d9",
+      "OrgCode": "6101020016",
+      "OrganizationName": "西安交通大学第二附属医院",
+      "StartClinicDate": "2023-02-07T15:50:33.4845568+08:00",
+      "EndClinicDate": "2023-02-13T00:00:00+08:00",
+      "ClinicMode": 1,
+      "Appointments": []
+    },
+    {
+      "ClinicLabelId": "5bc35a54-5e49-4c13-9b63-110784a52774",
+      "ClinicLabelName": "任建文",
+      "DepartmentId": "bfe09d8c-f8f7-4d8c-b120-000c8823f985",
+      "DepartmentName": "皮肤科门诊",
+      "OrganizationId": "010e5278-aa45-81d0-4d3e-7d5be619b7d9",
+      "OrgCode": "6101020016",
+      "OrganizationName": "西安交通大学第二附属医院",
+      "StartClinicDate": "2023-02-07T15:50:33.4845568+08:00",
+      "EndClinicDate": "2023-02-09T15:50:33.4845568+08:00",
+      "ClinicMode": 1,
+      "Appointments": [
+        {
+          "ClinicLabelId": "5bc35a54-5e49-4c13-9b63-110784a52774",
+          "ClinicLabelName": "任建文",
+          "EmployeeId": "00ff048d-aa4c-b995-4490-0fba14d83829",
+          "EmployeeName": "任建文",
+          "Date": "2023-02-08T00:00:00",
+          "Noon": 1,
+          "NoonName": "上午",
+          "Count": 50,
+          "Total": 50,
+          "Price": null,
+          "BasePrice": null,
+          "IsVisit": true,
+          "ClinicMode": 1,
+          "IsOpenBookCheck": false,
+          "Counts": 50,
+          "Udate": null,
+          "ClinicModeValue": 0,
+          "SchmId": "1523||3651"
+        },
+        {
+          "ClinicLabelId": "5bc35a54-5e49-4c13-9b63-110784a52774",
+          "ClinicLabelName": "任建文",
+          "EmployeeId": "00ff048d-aa4c-b995-4490-0fba14d83829",
+          "EmployeeName": "任建文",
+          "Date": "2023-02-07T00:00:00",
+          "Noon": 2,
+          "NoonName": "下午",
+          "Count": 45,
+          "Total": 45,
+          "Price": null,
+          "BasePrice": null,
+          "IsVisit": true,
+          "ClinicMode": 1,
+          "IsOpenBookCheck": false,
+          "Counts": 45,
+          "Udate": null,
+          "ClinicModeValue": 0,
+          "SchmId": "1523||3643"
+        }
+      ]
+    },
+    {
+      "ClinicLabelId": "5dc6579d-756f-40b7-9ae5-fc4b6a63c733",
+      "ClinicLabelName": "任建文",
+      "DepartmentId": "40cb1561-3558-4bfb-af9e-f4534b835a8e",
+      "DepartmentName": "皮肤激光中心",
+      "OrganizationId": "010e5278-aa45-81d0-4d3e-7d5be619b7d9",
+      "OrgCode": "6101020016",
+      "OrganizationName": "西安交通大学第二附属医院",
+      "StartClinicDate": "2023-02-07T15:50:33.4845568+08:00",
+      "EndClinicDate": "2023-02-13T00:00:00+08:00",
+      "ClinicMode": 1,
+      "Appointments": []
+    },
+    {
+      "ClinicLabelId": "b1abaeef-920e-4c24-bdc9-dc9707a65f5b",
+      "ClinicLabelName": "任建文",
+      "DepartmentId": "221b68c6-d71c-47ef-92a8-946b58fbd14b",
+      "DepartmentName": "荨麻疹门诊",
+      "OrganizationId": "010e5278-aa45-81d0-4d3e-7d5be619b7d9",
+      "OrgCode": "6101020016",
+      "OrganizationName": "西安交通大学第二附属医院",
+      "StartClinicDate": "2023-02-07T15:50:33.4845568+08:00",
+      "EndClinicDate": "2023-02-13T00:00:00+08:00",
+      "ClinicMode": 1,
+      "Appointments": [
+        {
+          "ClinicLabelId": "b1abaeef-920e-4c24-bdc9-dc9707a65f5b",
+          "ClinicLabelName": "任建文",
+          "EmployeeId": "00ff048d-aa4c-b995-4490-0fba14d83829",
+          "EmployeeName": "任建文",
+          "Date": "2023-02-10T00:00:00",
+          "Noon": 1,
+          "NoonName": "上午",
+          "Count": 45,
+          "Total": 45,
+          "Price": null,
+          "BasePrice": null,
+          "IsVisit": true,
+          "ClinicMode": 1,
+          "IsOpenBookCheck": false,
+          "Counts": 45,
+          "Udate": null,
+          "ClinicModeValue": 0,
+          "SchmId": "15552||36"
+        }
+      ]
+    }
+  ],
+  "Message": "",
+  "Code": null,
+  "TotalCount": 0,
+  "ResultCode": 1
+}

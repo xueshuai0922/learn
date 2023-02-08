@@ -1,0 +1,26 @@
+{
+  "ResultData": {
+    "PassportID": "5fb560d6-ff94-4099-8e8c-7f4b0a4cb335",
+    "RealName": "薛帅",
+    "CellPhone": "18700450206",
+    "Sex": "Male",
+    "SexName": "男",
+    "Icon": null,
+    "IsAuthen": true,
+    "NickName": null,
+    "Email": null,
+    "LoginName": "qq827681776",
+    "RegisterTime": "2022-02-09 13:29",
+    "IdType": 0,
+    "IdTypeText": "身份证",
+    "IdNum": "612724199209222110",
+    "PatientId": "00de7948-ae37-b880-4b1b-55e0ec922fd2",
+    "AuthenPhone": "",
+    "AuthenEmail": null,
+    "BirthDay": "1992-09-22"
+  },
+  "Message": null,
+  "Code": null,
+  "TotalCount": 0,
+  "ResultCode": 1
+}
