@@ -120,7 +120,7 @@
                             let WeekText = info.WeekText //星期几
 
                             if(addition.weekday.indexOf(WeekText)<0){
-                                console.log("不满足星期的预定")
+                                console.log("排号在【"+WeekText+"】,不满足【"+addition.weekday+"】的预定")
                                 return false
                             }
                             for (let i = 0; i < resList.length; i++) {
